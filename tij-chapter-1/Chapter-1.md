@@ -20,7 +20,7 @@ Objects, or things, can also do something, even if that something is just sit th
 Now in real life a tv is really annoying to change channels and control the volume if you have to get up and mess with the tv directly. Luckily in real life we have a remote that can control the tv for us. In the programming world there is also a "remote" for objects known as a _reference_. The reference is what is used to manipulate an object in the programming world. More often then not, when we are discussing manipulating objects, we are technically using a reference to manipulate the object, very much like a remote is used to control or manipulate a tv. And just like in real life, when you tell someone "Hey, turn down the TV" they know that you mean get the remote and turn down the volume. That is also the same in the programming world when we say, we do something to an object, we are really using a reference to control the object.
 
 
-Now we can't just pick up any remote and make it work on a tv, the same can be said about references and objects. The manufacturers of a tv, created the tv and also created a remote that works with that tv specifically. In the programming world we are the manufacturer of both the "tv" and the "remote". As programmers we are the creators of the object as well as the creators of the reference (or remote). Now again, Java is a language, so it follows a specific way of doing things, or _syntax_ as we say in the programming world. Let's pretend we are a tv manufacturer called Fony and we want to create a remote for a specific tv. 
+Now we can't just pick up any remote and make it work on a tv, the same can be said about references and objects. The manufacturers of a tv, created the tv and also created a remote that works with that tv specifically. In the programming world we are the manufacturer of both the "tv" and the "remote". As programmers we are the creators of the object as well as the creators of the reference (or remote). Now again, Java is a language, so it follows a snnpecific way of doing things, or _syntax_ as we say in the programming world. Let's pretend we are a tv manufacturer called Fony and we want to create a remote for a specific tv. 
 
 
 The syntax to create a tv with a remote is as follows:
@@ -80,3 +80,55 @@ In this example here, the inner curly braces(the ones that have `myObjectInside`
 ## Creating New Data Types: Class
 
 
+We've discussed how we are able to create objects and have a reference connected to them. But what determines how an object is create? We do, we as programmers get to determine how objects are created. Do we want a dog to have 8 legs or a car with more horsepower than actual horses? We can control all of those things. Every object that is created in Java is created using a blueprint. As programmers we get to design the blueprint that is used to create an object. That blueprint is known as a _class_. It is a class that determines what makes an object an object. Through the class we are able to determine what characteristics our object has and what our object is able to do. Going back to our example of `FonyTV tvRemote = new FonyTV()`, `FonyTV` is the blueprint or class that is used to create our `FonyTV` object and reference.
+
+
+The actual class itself is declared like this:
+
+	Class NameOfTheClass{
+		//Here is some code here
+	}
+
+When we want to create an object using a specific class we follow the syntax that we saw with the `FonyTV` example:
+
+
+	NameOfTheClass nameOfTheReference = new NameOfTheClass();
+
+
+## Fields and Methods
+
+
+We discussed earlier how objects can have certain features/characterics and object can be able to do something. In the Java world those features or characteristics are known as _fields_. An objects ability to do something is known as a _method_. Let's take a look at what this looks like at the code level.
+
+	class DataOnly{
+	
+		int i;
+		double d;
+		boolean b;
+
+	}
+	
+Our blueprint of an object or class is called `DataOnly`. `int i; , double d;` and `boolean b;` are all fields within the class. So whenever an object is created, it is created with these fields which can be used to store data or express specific characteristics of an object. Let us take a look once again at how we can create an object. 
+
+	DataOnly data = new DataOnly();
+	
+Recall how this is the proper syntax in creating an object. `DataOnly` is the class that we using to create our object. To manipulate the fields within our object, we use the reference (just like in the TV and remote analogy).
+
+	data.i = 47;
+	data.d = 43.8;
+	data.b = false;
+	
+In the example above we are access data's fields and setting them to a specific value.
+
+What's neat about objects is that objects can contain other objects that contain some sort of data.
+
+
+	objectReference.objectReference.field
+
+Or a more clear exmaple:
+
+	myPlane.fuelTank.capacity=98.7;
+
+## Methods arguments, and Return Values
+
+As mentioned previously, a _method_ is a way to do something or how something is done. Just like in real life there a different methods of doing something or solving a problem. In the Java world, we are in control of methods and how they work to get something done. Also in the Java world, methods are how objects are able to talk to each and send messages to one another.
