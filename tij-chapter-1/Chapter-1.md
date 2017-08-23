@@ -131,4 +131,60 @@ Or a more clear exmaple:
 
 ## Methods arguments, and Return Values
 
-As mentioned previously, a _method_ is a way to do something or how something is done. Just like in real life there a different methods of doing something or solving a problem. In the Java world, we are in control of methods and how they work to get something done. Also in the Java world, methods are how objects are able to talk to each and send messages to one another.
+As mentioned previously, a _method_ is a way to do something or how something is done. Just like in real life there a different methods of doing something or solving a problem. In the Java world, we are in control of methods and how they work to get something done. Also in the Java world, methods are how objects are able to talk to each and send messages to one another. When we are creating a method there are 3 parts to the method itself, a name, a return type and a body. When we create a method it looks like this.
+
+	ReturnType methodName (argument list){
+	
+	//Method Body Code Here
+	
+	}
+
+
+We'll go ahead and define some of these words here. A _return type_ is a value that is returned from the method after it get a going. After a method does it's thing, it can return a specific value to whoever "called" the method to do something. The value can be something like a `String` or an `integer` or anything in between. An _argument list_ is information that is given or "passed" into the method. What is listed in an argument list can be used by a method. Finally, there is a term called a _method signature_. A _method signature_ is basically just the `methodName` + `(argument list)` which allows a developer to uniquely name a method. In order for methods to be "called" or basically told to do what they are ment to do, they have to be called from an object. To do this, it is very much like what we saw for fields.
+
+	objectName.methodName(arguments, arguments, arguments)
+	
+To provide a more concrete example, suppose we have a method called `myMethod()` that returns an `int`. We have an object called `myObject` which can call `myMethod()`. If we wanted to set a variable `int x` to the value that can be returned by our object method combo we can do it like this:
+
+	int x = myObject.myMethod();
+	
+When we call a method, we are sending a message to an object. In our example above, the `myMethod()` is sending a message to `myObject`.
+
+## The Argument List
+
+An _argument list_ specifies what information is being passed into a method. The specific information that is passed is also objects, but in mind that almost everything that we do in regards to objects is being done through the reference that is connected to an object. Once an object is inside a method, we can also call the methods that are associated with that specific object. In otherwords within a method, we pass objects to the the method and from there we can call methods on the object that was just passed to the original method. For example:
+
+	int Stroage(String s){
+	
+		return s.length() * 2;
+	
+	}
+
+Here we see the object(reference) `s` that is being passed into the `Storage()` method. Once we are inside the body of the method, we are able to call methods that are associated with the object `s`
+
+
+The other aspect of this example method that we need to look at is the `return`. `return` does two things for us:
+
+* Leave the method body, thus saying that we are all done here in the method.
+* If the method produces a value that we may need outside the method itself, we can send it out to be used elsewhere and is right after the return. In the example above, whatever value `s.length()*2;` produces can be sent out and used outside the method `Stroage()`. Suppose though we don't want our method to return any value. All we need to do is add `void` in front of our method name like this `void Stroage(String s)` and we won't need to use a return statement after that. Otherwise we will have to return something that matches the return type specific in the method. In the example above, the return type is `int`. At the end of the day when we are creating programs, all they are are just objects that have methods that take other objects as arguments and send messages to other objects.
+
+## Static
+
+We can actually bypass the whole using an object to call a method or access a field when we declare a class `Static`. When using the static keyword all we have to do is use the class name instead of the object to access the method or fields within a static object. Some examples are:
+
+	class StaticTest{
+	
+		static int i = 47;
+	
+	}
+
+	int x = StaticTest.i; 
+
+## Building a Java Program
+
+
+The first part in building a Java program is going to be how we name it. In order to distinguish names and prevent them from conflicting with each other we typically name our programs using an internet domain name in reverse. So something like `com.eddiechow.thinkinginjava`. This is known as _package convention_. We create packages using that reverse URL rule and then we place our classes that we create inside of the package. 
+
+## Using Other Components
+
+To use other classes we use the keyword `import`. This allows us to bring in a whole package which can contain many classes. A package can essentially be a library of classes that can be used in another class. We typically bring in a collection of classes rather than just an individual one. 
