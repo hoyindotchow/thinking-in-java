@@ -13,9 +13,7 @@ public class ExerciseTen {
         CalculateVampire = vampNum = new CalculateVampire();
         for (int i = 1234; i < 1235; i++) {
             sep.seperate(i);
-            numPair.pair(sep);
-            vampNum.
-
+            numPair.pair(sep,i);
         }
 
     }
